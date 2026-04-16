@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dulce Pedido</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- OVERLAY -->
+<div id="overlay" class="overlay" onclick="toggleCart()"></div>
+<!-- HEADER -->
+<header>
+  <h1>Dulce Pedido 🍰</h1>
+  <p>Postres artesanales hechos con amor en Toluca 💕</p>
+</header>
+<!-- CARRITO -->
+<div class="cart" id="cartIcon" onclick="toggleCart()">
+  🛒 <span id="cart-count">0</span>
+</div>
+<div class="cart-box" id="cartBox">
+  <h4>Tu pedido 🧾</h4>
+  <ul id="cartItems"></ul>
+  <p>Total: $<span id="total">0</span></p>
+  <button class="btn" onclick="sendWhatsApp()">Enviar pedido por WhatsApp</button>
+  <button class="btn" onclick="clearCart()">Vaciar carrito</button>
+</div>
+<main>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <h2>Endulza tus momentos especiales 🎉</h2>
+    <p>
+      En <strong>Dulce Pedido</strong> creamos postres únicos para cumpleaños,
+      eventos y antojos del día a día. Cada producto está hecho con ingredientes
+      frescos y mucho cariño.
+    </p>
+    <p>
+      🍰 Pasteles personalizados<br>
+      🧁 Cupcakes decorados<br>
+      🍮 Postres tradicionales
+    </p>
+    <button class="btn" onclick="document.getElementById('productos').scrollIntoView({behavior:'smooth'})">
+      Ver productos
+    </button>
+  </div>
+  <div class="hero-img">
+    <img src="images/postre2.jpg" alt="Postres">
+  </div>
+</section>
+<!-- BENEFICIOS -->
+<section class="benefits">
+  <div class="benefit">
+    <h3>🎂 Personalizados</h3>
+    <p>Creamos diseños únicos para cada cliente.</p>
+  </div>
+  <div class="benefit">
+    <h3>🚚 Entrega rápida</h3>
+    <p>Recibe tu pedido en tiempo y forma.</p>
+  </div>
+  <div class="benefit">
+    <h3>⭐ Calidad premium</h3>
+    <p>Ingredientes seleccionados y frescos.</p>
+  </div>
+</section>
+<!-- RECOMENDADOS -->
+<section class="recomendados">
+  <h2>⭐ Productos recomendados</h2>
+  <p>Los favoritos de nuestros clientes</p>
+  <div class="reco-container">
+    <div class="reco-card">
+      <img src="images/postre1.jpg">
+      <div>
+        <h4>Pastel de Chocolate</h4>
+        <p>Suave, esponjoso y delicioso 🍫</p>
+        <button class="btn" onclick="add('Pastel chocolate',250,this)">Agregar</button>
+      </div>
+    </div>
+    <div class="reco-card">
+      <img src="images/postre3.jpg">
+      <div>
+        <h4>Cupcakes Premium</h4>
+        <p>Ideales para eventos 🧁</p>
+        <button class="btn" onclick="add('Cupcakes premium',150,this)">Agregar</button>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- PRODUCTOS -->
+<section>
+  <h2 class="section-title">Nuestros productos 🍩</h2>
+<!-- BUSCADOR -->
+<section class="search-section">
+  <div class="search">
+    <input type="text" placeholder="Buscar postre..." onkeyup="buscar(this.value)">
+  </div>
+  <div class="categories" id="cats">
+    <button onclick="filter('todos',this)" class="active">🍽️ Todos</button>
+    <button onclick="filter('pasteles',this)">🍰 Pasteles</button>
+    <button onclick="filter('cupcakes',this)">🧁 Cupcakes</button>
+    <button onclick="filter('postres',this)">🍮 Postres</button>
+  </div>
+</section>
+  <p style="text-align:center;">Explora nuestro catálogo y agrega tus favoritos</p>
+  <section id="productos" class="products"></section>
+</section>
+<!-- CTA -->
+<section class="cta">
+  <h2>¿Listo para ordenar? 🎉</h2>
+  <p>Agrega productos y envíanos tu pedido por WhatsApp</p>
+  <button class="btn" onclick="toggleCart()">Ver carrito</button>
+  <button class="btn" onclick="sendWhatsApp()">Ordenar ahora</button>
+</section>
+<!-- CONTACTO -->
+<section class="contact">
+  <h2>Contáctanos 📞</h2>
+  <p>¿Tienes un pedido especial? Escríbenos</p>
+  <button class="btn" onclick="sendWhatsApp()">Enviar mensaje</button>
+</section>
+</main>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-container">
+    <h3>Sobre nosotros</h3>
+    <p>Dulce Pedido - Postres personalizados por encargo</p>
+    <p>📍 Toluca, México</p>
+    <p>📞 722-000-0000</p>
+    <p>📧 dulcepedido@gmail.com</p>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

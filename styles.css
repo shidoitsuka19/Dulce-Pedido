@@ -1,0 +1,381 @@
+:root{
+--primary:#ff4d88;
+--primary-dark:#e63e73;
+--secondary:#ff9bb3;
+--bg:#fff5f7;
+--card:#fff;
+--text:#333;
+--shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+*{box-sizing:border-box}
+
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:linear-gradient(135deg,#fff5f7,#ffe3ec);
+color:var(--text);
+}
+
+/* HEADER */
+header{
+background:linear-gradient(135deg,var(--primary),var(--secondary));
+color:#fff;
+text-align:center;
+padding:25px 15px;
+font-size:1.2rem;
+letter-spacing:1px;
+box-shadow:var(--shadow);
+}
+
+/* HERO */
+.hero{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:20px;
+padding:40px 20px;
+max-width:1100px;
+margin:auto;
+flex-wrap:wrap;
+}
+
+.hero-text{flex:1}
+.hero-text h2{font-size:28px;margin-bottom:10px;color:var(--primary)}
+.hero-text p{font-size:14px;margin-bottom:15px}
+
+.hero-img{flex:1;text-align:center}
+.hero-img img{
+width:100%;
+max-width:350px;
+border-radius:20px;
+box-shadow:var(--shadow);
+}
+
+/* SECCIONES */
+.recomendados,
+.products{
+max-width:1100px;
+margin:auto;
+padding:20px;
+}
+
+.recomendados h2,
+.section-title,
+.contact h2{
+color:var(--primary);
+}
+
+.section-title{
+text-align:center;
+margin-top:20px;
+color:var(--primary);
+}
+
+.reco-container,
+.categories,
+.benefits{
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+justify-content:center;
+}
+
+/* BENEFICIOS */
+.benefit{
+background:#fff;
+padding:15px;
+border-radius:15px;
+width:220px;
+box-shadow:var(--shadow);
+text-align:center;
+}
+
+/* CTA */
+.cta{
+text-align:center;
+padding:40px 20px;
+background:linear-gradient(135deg,var(--primary),var(--secondary));
+color:#fff;
+margin-top:30px;
+}
+
+.contact{text-align:center;padding:30px 20px}
+
+/* CARDS RECOMENDADOS */
+.reco-card{
+display:flex;
+align-items:center;
+gap:10px;
+background:#fff;
+padding:10px;
+border-radius:15px;
+box-shadow:var(--shadow);
+width:250px;
+transition:.3s;
+}
+
+.reco-card:hover{transform:translateY(-5px)}
+
+.reco-card img{
+width:70px;
+height:70px;
+border-radius:10px;
+}
+
+.reco-card h4{margin:0;font-size:14px}
+.reco-card p{margin:0;font-size:12px;color:#777}
+
+/* BUSCADOR */
+.search{
+display:flex;
+justify-content:center;
+padding:15px;
+}
+
+.search input{
+padding:10px 15px;
+width:280px;
+border-radius:30px;
+border:none;
+outline:none;
+box-shadow:var(--shadow);
+transition:.3s;
+}
+
+.search input:focus{transform:scale(1.05)}
+
+/* CATEGORÍAS */
+.categories button{
+background:#fff;
+border:none;
+border-radius:20px;
+padding:8px 15px;
+cursor:pointer;
+box-shadow:var(--shadow);
+transition:.3s;
+}
+
+.categories button:hover{transform:translateY(-2px)}
+
+.active{
+background:var(--primary)!important;
+color:#fff!important;
+}
+
+/* PRODUCTOS */
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+position:relative;
+z-index:1;
+}
+
+.card{
+background:var(--card);
+padding:15px;
+border-radius:20px;
+box-shadow:var(--shadow);
+text-align:center;
+transition:.3s;
+position:relative;
+overflow:hidden;
+}
+
+.card:hover{transform:translateY(-8px) scale(1.02)}
+
+.card img{
+width:100%;
+border-radius:15px;
+margin-bottom:10px;
+}
+
+.card h3{margin:10px 0 5px}
+
+.card p{
+font-weight:600;
+color:var(--primary);
+}
+
+/* BOTONES */
+.btn{
+background:linear-gradient(135deg,var(--primary),var(--secondary));
+color:#fff;
+padding:10px 15px;
+border:none;
+border-radius:20px;
+cursor:pointer;
+margin-top:10px;
+transition:.3s;
+}
+
+.btn:hover{
+transform:scale(1.05);
+background:var(--primary-dark);
+}
+
+/* CARRITO */
+.cart{
+position:fixed;
+right:15px;
+top:15px;
+background:var(--primary);
+color:#fff;
+padding:8px 12px;
+border-radius:20px;
+cursor:pointer;
+font-size:13px;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+z-index:10000;
+display:flex;
+align-items:center;
+gap:5px;
+transition:.3s;
+}
+
+.cart:hover{transform:scale(1.08)}
+
+#cart-count{
+background:#fff;
+color:var(--primary);
+border-radius:50%;
+padding:2px 6px;
+font-size:11px;
+font-weight:600;
+}
+
+/* PANEL */
+.cart-box{
+position:fixed;
+right:0;
+top:0;
+height:100vh;
+width:240px;
+background:#fff;
+border-left:2px solid #f1f1f1;
+padding:15px;
+z-index:10000;
+display:none;
+box-shadow:-10px 0 30px rgba(0,0,0,0.1);
+}
+
+.cart-box.show{
+display:block;
+animation:slideSide .35s cubic-bezier(.25,.8,.25,1);
+}
+
+.cart-box h4{font-size:14px;margin:5px 0 10px;color:var(--primary)}
+
+.cart-box ul{
+list-style:none;
+padding:0;
+margin:0;
+max-height:60vh;
+overflow-y:auto;
+}
+
+.cart-box li{
+display:flex;
+justify-content:space-between;
+align-items:center;
+font-size:12px;
+padding:5px 0;
+border-bottom:1px solid #eee;
+}
+
+.cart-box li button{
+background:none;
+border:none;
+color:#ff4d4d;
+cursor:pointer;
+font-size:12px;
+}
+
+.cart-box p{
+font-size:13px;
+font-weight:600;
+margin:10px 0;
+text-align:right;
+}
+
+.cart-box .btn{
+font-size:12px;
+padding:6px;
+border-radius:10px;
+margin-top:5px;
+}
+
+/* SCROLL */
+.cart-box ul::-webkit-scrollbar{width:4px}
+.cart-box ul::-webkit-scrollbar-thumb{
+background:var(--primary);
+border-radius:10px;
+}
+
+/* OVERLAY */
+.overlay{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,0.3);
+z-index:9999;
+display:none;
+}
+
+/* ANIMACIONES */
+.bump{animation:bump .3s}
+.bounce{animation:bounce .3s}
+
+@keyframes bump{
+0%{transform:scale(1)}
+50%{transform:scale(1.4)}
+100%{transform:scale(1)}
+}
+
+@keyframes bounce{
+0%{transform:scale(1)}
+50%{transform:scale(1.2)}
+100%{transform:scale(1)}
+}
+
+@keyframes slideSide{
+from{transform:translateX(100%);opacity:0}
+to{transform:translateX(0);opacity:1}
+}
+
+/* OTROS */
+.fly{
+position:fixed;
+z-index:20000;
+width:40px;
+height:40px;
+border-radius:50%;
+pointer-events:none;
+transition:all .7s cubic-bezier(.4,-0.3,1,.68);
+}
+
+.no-results{
+text-align:center;
+padding:30px;
+font-weight:600;
+font-size:1.2rem;
+}
+
+/* FOOTER */
+footer{
+background:#111;
+color:#fff;
+padding:40px 20px;
+margin-top:30px;
+}
+
+.footer-container{
+max-width:900px;
+margin:auto;
+text-align:center;
+}
+
+.footer-container h3{
+margin-bottom:10px;
+color:var(--secondary);
+}
