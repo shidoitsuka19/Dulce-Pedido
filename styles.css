@@ -28,6 +28,14 @@ letter-spacing:1px;
 box-shadow:var(--shadow);
 }
 
+.heroportada-img{flex:1;text-align:center}
+.heroportada-img img{
+width:100%;
+max-width:350px;
+border-radius:20px;
+box-shadow:var(--shadow);
+}
+
 /* HERO */
 .hero{
 display:flex;
